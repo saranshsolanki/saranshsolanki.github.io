@@ -39,20 +39,20 @@
         <video id="main" autoplay="true" loop="true" src="resources/2.mp4" webkit-playsinline crossorigin></video>
       </a-assets>
 
-      <a-video src="resources/2.mp4" width="3" height="1.75" position="0 0.5 0" segments-height="5"></a-video>
+      <!-- <a-video src="resources/2.mp4" width="3" height="1.75" position="0 0.5 0" segments-height="5"></a-video> -->
 
       <!-- <a-video src="resources/2.mp4"></a-video> -->
 
      <!-- <a-marker-camera ></a-marker-camera> -->
-      <a-marker-camera type="pattern" preset="custom" url="pattern/new/pattern.patt">
-        <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7; src:#main'></a-plane>
+      <!-- <a-marker-camera type="pattern" preset="custom" url="pattern/new/pattern.patt"> -->
+        <!-- <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7; src:#main'></a-plane> -->
 
-      </a-marker-camera>
+      <!-- </a-marker-camera> -->
 
-     <!-- <a-marker preset="hiro" vidhandler>
-        <a-plane position='1 2 0' scale="2 2 2" width="2" rotation="-90 0 0" 
-         material='transparent:true; opacity: 0.7; src:#vid'></a-plane>
-      </a-marker> -->
+     <a-marker preset="hiro" vidhandler>
+        <a-plane position='0 0.5 -2' scale="1 1 1" width="1" rotation="-90 0 0" 
+         material='transparent:true; opacity: 0.7; src:#main'></a-plane>
+      </a-marker>
    </a-scene>
 
 
