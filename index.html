@@ -10,8 +10,8 @@
 <script>THREEx.ArToolkitContext.baseURL = 'https://cdn.rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
 <body style='margin : 0px; overflow: hidden;'>
 
-  <div >
-    <video controls id="myvideo" style="display: none">
+  <div>
+    <video controls id="video" style="display: none;" width="320" height="240">
       <source src="resources/2.mp4"></source>
       
     </video>
@@ -42,9 +42,8 @@
       </a-entity>
    </a-scene> -->
 
-
-
-   <a-scene embedded arjs='trackingMethod: best;' artoolkit='sourceType: webcam;'>
+   <div id="ar" style="display: inline;">
+    <a-scene embedded arjs='trackingMethod: best;' artoolkit='sourceType: webcam;'>
       <a-assets>
         <video id="main" autoplay="true" loop="true" src="resources/2.mp4" webkit-playsinline crossorigin></video>
       </a-assets>
@@ -59,11 +58,14 @@
 
       <!-- </a-marker-camera> -->
 
-     <a-marker preset="hiro" vidhandler markerhandler emitevents="true" cursor="rayOrigin: mouse" id="video-marker">
+      <a-marker preset="hiro" vidhandler markerhandler emitevents="true" cursor="rayOrigin: mouse" id="video-marker">
         <a-plane position='0 0.5 -2' scale="1 1 1" width="1" rotation="-90 0 0" 
          material='transparent:true; opacity: 0.7; src:#main'></a-plane>
       </a-marker>
-   </a-scene>
+    </a-scene>
+   </div>
+
+   
 
 
 

@@ -2,15 +2,17 @@ AFRAME.registerComponent('markerhandler', {
 
     init: function() {
         const Marker = document.querySelector("#video-marker");
-        var elem = document.getElementById("myvideo");
+        var video = document.getElementById("video");
+        var ar = document.getElementById("ar");
         // const aEntity = document.querySelector("#animated-model");
 
         // every click, we make our model grow in size :)
         Marker.addEventListener('click', function(ev, target){
 
             console.log("here");
-            
-            elem.style.display = "block";
+
+            video.style.display = "block";
+            ar.style.display = "none";
 
             // elem.requestFullscreen();
             // elem.mozRequestFullScreen();
