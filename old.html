@@ -1,0 +1,88 @@
+
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+<!-- <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script> -->
+
+<script src="events.js"></script>
+
+<script>THREEx.ArToolkitContext.baseURL = 'https://cdn.rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+<body style='margin : 0px; overflow: hidden;'>
+
+  <div>
+    <video controls id="video" style="display: none;" width="320" height="240">
+      <source src="resources/2.mp4"></source>
+      
+    </video>
+  </div>
+	<!-- <a-scene embedded artoolkit='sourceType: webcam;'>
+	<a-sphere src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
+         <a-animation attribute="scale"
+              dur="1000"
+              from= "1 1 1"
+              to="2 2 2"
+              direction='alternate-reverse'
+              easing= "ease-in-out-circ"     
+              repeat="indefinite"></a-animation>
+     </a-sphere>
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene> -->
+
+
+  <!-- <a-scene embedded artoolkit='sourceType: webcam;' >
+    <a-anchor hit-testing-enabled='true'>
+      <a-entity>
+        <video type="video/mp4" id="penguin-sledding" autoplay="true" loop="false" src="resources/video.mp4" webkit-playsinline>
+         </a-entity>
+         <video  position="0 0.2 0"  src="video.mp4" rotation="90 180 0"></video>
+      </a-anchor>
+      <a-camera-static preset='hiro'/>
+      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible="">
+      </a-entity>
+   </a-scene> -->
+
+   <div id="ar" style="display: inline;">
+    <a-scene embedded arjs='trackingMethod: best;' artoolkit='sourceType: webcam;'>
+      <a-assets>
+        <video id="main" autoplay="true" loop="true" src="resources/2.mp4" webkit-playsinline crossorigin></video>
+      </a-assets>
+
+      <!-- <a-video src="resources/2.mp4" width="3" height="1.75" position="0 0.5 0" segments-height="5"></a-video> -->
+
+      <!-- <a-video src="resources/2.mp4"></a-video> -->
+
+     <!-- <a-marker-camera ></a-marker-camera> -->
+      <!-- <a-marker-camera type="pattern" preset="custom" url="pattern/new/pattern.patt"> -->
+        <!-- <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7; src:#main'></a-plane> -->
+
+      <!-- </a-marker-camera> -->
+
+      <a-marker type="pattern" preset="custom" url="pattern/2/pattern-main.patt" vidhandler markerhandler emitevents="true" cursor="rayOrigin: mouse" id="video-marker">
+        <a-plane position='0 0.5 -2' scale="1 1 1" width="1" rotation="-90 0 0" material='transparent:true; opacity: 0.7; src:#main'></a-plane>
+      </a-marker>
+    </a-scene>
+   </div>
+
+   
+
+
+
+
+   
+<!-- <body style='margin : 0px; overflow: hidden;'>
+  <div style='position: fixed; top: 10px; width:inherit; text-align: center; z-index: 1;'>
+    <a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - Check out the repository !
+  </div>
+  <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180' >
+    <a-assets>
+      <video id="vid" src="resources/main.mp4" loop="true" crossorigin>
+    </a-assets>
+   
+    <a-marker id="memarker" preset="hiro" vidhandler>
+      <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7;src:#vid'></a-plane>
+    </a-marker>
+
+  </a-scene>
+</body> -->
+</body>
